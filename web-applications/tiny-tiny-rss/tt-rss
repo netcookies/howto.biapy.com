@@ -1,7 +1,7 @@
 #! /bin/bash
 ### BEGIN INIT INFO
 # Provides:          ttrss-DOMAIN
-# Required-Start:    $local_fs $remote_fs networking mysql
+# Required-Start:    $local_fs $remote_fs $network
 # Required-Stop:     $local_fs $remote_fs
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
@@ -16,7 +16,7 @@
 # PATH should only include /usr/* if it runs after the mountnfs.sh script
 PATH="/sbin:/usr/sbin:/bin:/usr/bin"
 DESC="Tiny Tiny RSS update daemon"
-NAME="$(command basename "$(command readlink -f "${0}")")"
+NAME="$(command basename ${0}")"
 DISABLED=0
 FORKING=0
 
